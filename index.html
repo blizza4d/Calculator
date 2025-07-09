@@ -1,0 +1,74 @@
+<html lang="en">
+    <head>
+        <title>Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styler.css">
+        <link rel="icon" href="calcu.jpeg">
+    </head>
+
+    
+
+    <body onload="myMove() , myMove1() , myMove2() , myMove3()" id="body">
+        <div class="container">
+            <div id="bubble1"></div>
+            <div id="bubble"></div>
+        </div>
+
+        <div id="maincontent">
+
+            <p id="title">Calculator</p>
+        
+            <div class="calculator">
+                <div class="inner">
+                        <div id="display">
+                            <div id="prev"></div>
+                            <input type="text" id="output" autocomplete="off" readonly>
+
+                        </div>
+
+                        <div class="row_1">
+                            <button onclick="backspace()" id="clear" class="ac item">AC</button>
+                            <button onclick="deleted()" id="delete" class="del item">Del</button>
+                            <button onclick="appendoperator('%')" id="percent" class="operator item">%</button>
+                            <button onclick="appendoperator('+')" id="plus" class="operator item">+</button>
+                        </div>
+
+                        <div class="row_2">
+                            <button onclick="appendvalue('7')" id="seven" class="number item">7</button>
+                            <button onclick="appendvalue('8')" id="eight" class="number item">8</button>
+                            <button onclick="appendvalue('9')" id="nine" class="number item">9</button>
+                            <button onclick="appendoperator('-')" id="minus" class="operator item">-</button>
+                        </div>
+
+                        <div class="row_3">
+                            <button onclick="appendvalue('4')" id="four" class="number item">4</button>
+                            <button onclick="appendvalue('5')"id="five" class="number item">5</button>
+                            <button onclick="appendvalue('6')" id="six" class="number item">6</button>
+                            <button onclick="appendoperator('*')" id="multiply" class="operator item">*</button>
+                        </div>
+
+                        <div class="row_4">
+                            <button onclick="appendvalue('1')" id="one" class="number item">1</button>
+                            <button onclick="appendvalue('2')" id="two" class="number item">2</button>
+                            <button onclick="appendvalue('3')" id="three" class="number item">3</button>
+                            <button onclick="appendoperator('/')" id="divide" class="operator item">/</button>
+                        </div>
+
+                        <div class="row_5">
+                            <button onclick="appendvalue('0')" id="zero" class="number item">0</button>
+                            <button onclick="appenddot('.')" id="dot" class="dot item">.</button>
+                            <button onclick="calculate()" id="equal" class="end item">=</button>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="containerright">
+            <div id="bubble2"></div>
+            <div id="bubble3"></div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

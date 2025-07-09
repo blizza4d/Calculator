@@ -1,0 +1,231 @@
+*{
+    font-family: fantasy;
+}
+
+#bubble1{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: blue;
+    left:   20%;
+    top:  400px;
+    position: absolute;
+    transition: top 0.2s;
+
+}
+#bubble{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: red;
+    left:   8%;
+    top:  200px;
+    position: absolute;
+    transition: top 0.2s;
+}
+
+#bubble2{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: red;
+    left:   75%;
+    top: 400px;
+    position: absolute;
+    transition: top 0.2s;
+
+}
+
+#bubble3{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: red;
+    left:   90%;
+    top: 400px;
+    position: absolute;
+    transition: top 0.2s;
+
+}
+
+#body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    background-color: #464671;
+}
+.calculator{
+    border-radius: 15px;
+    width: 400px;
+    height: 500px;
+    padding: 4px;
+    box-sizing: border-box;
+    border: 2px black solid;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    border: 2px black solid;
+    background-color: rgb(33, 32, 32);
+}
+
+#title{
+    color: aliceblue;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    margin-top: 30px;
+}
+
+#display{
+    width: 300px;
+    background-color: aqua;
+    height: 75px;
+    padding: 10px;
+    margin-left: 34px;
+    margin-top: 20px;
+    background-color: gray;
+    border-radius: 20px;
+}
+
+.row_1,.row_2,.row_3,.row_4,.row_5{
+    margin-top: 20px;
+    margin-left: 5px;
+    justify-content: space-between;
+}
+
+.item{
+    width: 75px;
+    height:50px;
+    padding:10px;
+    font-size: larger;
+    background-color: #2e2d66;
+    color: aliceblue;
+}
+
+#zero{
+    width:155px;
+    padding: 10px;
+}
+
+.item{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.9s;
+}
+
+.item::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+}
+
+
+.item.animate::after {
+    animation: shine 0.5s ease-out;
+}
+
+@keyframes shine {
+    0% {
+        left: -60%;
+    }
+    100% {
+        left: 120%;
+    }
+}
+
+.item:hover {
+    background-color: #44448a;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+#prev{
+    width: 100%;
+    height: 50%;
+    text-align: right;
+}
+#output{
+    width: 100%;
+    height:50%;
+    text-align: right;
+    font-size: 25px;
+    background-color: gray;
+    border: none;
+}
+
+#bubble, #bubble1 ,#bubble2,#bubble3{
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 
+                0 0 40px rgba(255, 255, 255, 0.3),
+                inset 0 0 10px rgba(255, 255, 255, 0.2);
+    background: radial-gradient(circle at 30% 30%, #ff6666, #cc0000);
+    animation: float 6s ease-in-out infinite;
+    z-index: 0;
+}
+
+.item:active {
+    box-shadow: 0 0 10px #ffffff66;
+    transform: scale(0.98);
+}
+
+#bubble1 {
+    background: radial-gradient(circle at 30% 30%, #66aaff, #0033cc);
+}
+
+#bubble2{
+    background: radial-gradient(circle at 30% 30% , #80f175 , #48e639);
+}
+#bubble3{
+    background: radial-gradient(circle at 30% 30%, #b08cee , #3f3ff4);
+}
+
+@media screen and (max-width: 450px) {
+    .calculator {
+        width: 90%;
+        height: auto;
+    }
+
+    .item, #zero {
+        width: 22vw;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    #display {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
